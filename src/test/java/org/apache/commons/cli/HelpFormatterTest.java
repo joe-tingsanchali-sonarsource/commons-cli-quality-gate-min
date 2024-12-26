@@ -365,23 +365,23 @@ public class HelpFormatterTest {
         }
     }
 
-//    @Test
-//    public void testPrintOptionGroupUsage() {
-//        final OptionGroup group = new OptionGroup();
-//        group.addOption(Option.builder("a").build());
-//        group.addOption(Option.builder("b").build());
-//        group.addOption(Option.builder("c").build());
-//
-//        final Options options = new Options();
-//        options.addOptionGroup(group);
-//
-//        final StringWriter out = new StringWriter();
-//
-//        final HelpFormatter formatter = new HelpFormatter();
-//        formatter.printUsage(new PrintWriter(out), 80, "app", options);
-//
-//        assertEquals("usage: app [-a | -b | -c]" + EOL, out.toString());
-//    }
+    @Test
+    public void testPrintOptionGroupUsage() {
+        final OptionGroup group = new OptionGroup();
+        group.addOption(Option.builder("a").build());
+        group.addOption(Option.builder("b").build());
+        group.addOption(Option.builder("c").build());
+
+        final Options options = new Options();
+        options.addOptionGroup(group);
+
+        final StringWriter out = new StringWriter();
+
+        final HelpFormatter formatter = new HelpFormatter();
+        formatter.printUsage(new PrintWriter(out), 80, "app", options);
+
+        assertEquals("usage: app [-a | -b | -c]" + EOL, out.toString());
+    }
 
     @Test
     public void testPrintOptions() {
@@ -425,81 +425,81 @@ public class HelpFormatterTest {
         assertEquals("multiple wrapped options", expected, sb.toString());
     }
 
-//    @Test
-//    public void testPrintOptionWithEmptyArgNameUsage() {
-//        final Option option = new Option("f", true, null);
-//        option.setArgName("");
-//        option.setRequired(true);
-//
-//        final Options options = new Options();
-//        options.addOption(option);
-//
-//        final StringWriter out = new StringWriter();
-//
-//        final HelpFormatter formatter = new HelpFormatter();
-//        formatter.printUsage(new PrintWriter(out), 80, "app", options);
-//
-//        assertEquals("usage: app -f" + EOL, out.toString());
-//    }
-//
-//    @Test
-//    public void testPrintRequiredOptionGroupUsage() {
-//        final OptionGroup group = new OptionGroup();
-//        group.addOption(Option.builder("a").build());
-//        group.addOption(Option.builder("b").build());
-//        group.addOption(Option.builder("c").build());
-//        group.setRequired(true);
-//
-//        final Options options = new Options();
-//        options.addOptionGroup(group);
-//
-//        final StringWriter out = new StringWriter();
-//
-//        final HelpFormatter formatter = new HelpFormatter();
-//        formatter.printUsage(new PrintWriter(out), 80, "app", options);
-//
-//        assertEquals("usage: app -a | -b | -c" + EOL, out.toString());
-//    }
-//
-//    // uses the test for CLI-131 to implement CLI-155
-//    @Test
-//    public void testPrintSortedUsage() {
-//        final Options opts = new Options();
-//        opts.addOption(new Option("a", "first"));
-//        opts.addOption(new Option("b", "second"));
-//        opts.addOption(new Option("c", "third"));
-//
-//        final HelpFormatter helpFormatter = new HelpFormatter();
-//        helpFormatter.setOptionComparator(new Comparator<Option>() {
-//            @Override
-//            public int compare(final Option opt1, final Option opt2) {
-//                // reverses the functionality of the default comparator
-//                return opt2.getKey().compareToIgnoreCase(opt1.getKey());
-//            }
-//        });
-//
-//        final StringWriter out = new StringWriter();
-//        helpFormatter.printUsage(new PrintWriter(out), 80, "app", opts);
-//
-//        assertEquals("usage: app [-c] [-b] [-a]" + EOL, out.toString());
-//    }
-//
-//    @Test
-//    public void testPrintSortedUsageWithNullComparator() {
-//        final Options opts = new Options();
-//        opts.addOption(new Option("c", "first"));
-//        opts.addOption(new Option("b", "second"));
-//        opts.addOption(new Option("a", "third"));
-//
-//        final HelpFormatter helpFormatter = new HelpFormatter();
-//        helpFormatter.setOptionComparator(null);
-//
-//        final StringWriter out = new StringWriter();
-//        helpFormatter.printUsage(new PrintWriter(out), 80, "app", opts);
-//
-//        assertEquals("usage: app [-c] [-b] [-a]" + EOL, out.toString());
-//    }
-//
+    @Test
+    public void testPrintOptionWithEmptyArgNameUsage() {
+        final Option option = new Option("f", true, null);
+        option.setArgName("");
+        option.setRequired(true);
+
+        final Options options = new Options();
+        options.addOption(option);
+
+        final StringWriter out = new StringWriter();
+
+        final HelpFormatter formatter = new HelpFormatter();
+        formatter.printUsage(new PrintWriter(out), 80, "app", options);
+
+        assertEquals("usage: app -f" + EOL, out.toString());
+    }
+
+    @Test
+    public void testPrintRequiredOptionGroupUsage() {
+        final OptionGroup group = new OptionGroup();
+        group.addOption(Option.builder("a").build());
+        group.addOption(Option.builder("b").build());
+        group.addOption(Option.builder("c").build());
+        group.setRequired(true);
+
+        final Options options = new Options();
+        options.addOptionGroup(group);
+
+        final StringWriter out = new StringWriter();
+
+        final HelpFormatter formatter = new HelpFormatter();
+        formatter.printUsage(new PrintWriter(out), 80, "app", options);
+
+        assertEquals("usage: app -a | -b | -c" + EOL, out.toString());
+    }
+
+    // uses the test for CLI-131 to implement CLI-155
+    @Test
+    public void testPrintSortedUsage() {
+        final Options opts = new Options();
+        opts.addOption(new Option("a", "first"));
+        opts.addOption(new Option("b", "second"));
+        opts.addOption(new Option("c", "third"));
+
+        final HelpFormatter helpFormatter = new HelpFormatter();
+        helpFormatter.setOptionComparator(new Comparator<Option>() {
+            @Override
+            public int compare(final Option opt1, final Option opt2) {
+                // reverses the functionality of the default comparator
+                return opt2.getKey().compareToIgnoreCase(opt1.getKey());
+            }
+        });
+
+        final StringWriter out = new StringWriter();
+        helpFormatter.printUsage(new PrintWriter(out), 80, "app", opts);
+
+        assertEquals("usage: app [-c] [-b] [-a]" + EOL, out.toString());
+    }
+
+    @Test
+    public void testPrintSortedUsageWithNullComparator() {
+        final Options opts = new Options();
+        opts.addOption(new Option("c", "first"));
+        opts.addOption(new Option("b", "second"));
+        opts.addOption(new Option("a", "third"));
+
+        final HelpFormatter helpFormatter = new HelpFormatter();
+        helpFormatter.setOptionComparator(null);
+
+        final StringWriter out = new StringWriter();
+        helpFormatter.printUsage(new PrintWriter(out), 80, "app", opts);
+
+        assertEquals("usage: app [-c] [-b] [-a]" + EOL, out.toString());
+    }
+
 //    // This test ensures the options are properly sorted
 //    // See https://issues.apache.org/jira/browse/CLI-131
 //    @Test
