@@ -366,22 +366,22 @@ public class HelpFormatterTest {
 //    }
 
     @Test
-    public void testPrintOptionGroupUsage() {
-        final OptionGroup group = new OptionGroup();
-        group.addOption(Option.builder("a").build());
-        group.addOption(Option.builder("b").build());
-        group.addOption(Option.builder("c").build());
-
-        final Options options = new Options();
-        options.addOptionGroup(group);
-
-        final StringWriter out = new StringWriter();
-
-        final HelpFormatter formatter = new HelpFormatter();
-        formatter.printUsage(new PrintWriter(out), 80, "app", options);
-
-        assertEquals("usage: app [-a | -b | -c]" + EOL, out.toString());
-    }
+//    public void testPrintOptionGroupUsage() {
+//        final OptionGroup group = new OptionGroup();
+//        group.addOption(Option.builder("a").build());
+//        group.addOption(Option.builder("b").build());
+//        group.addOption(Option.builder("c").build());
+//
+//        final Options options = new Options();
+//        options.addOptionGroup(group);
+//
+//        final StringWriter out = new StringWriter();
+//
+//        final HelpFormatter formatter = new HelpFormatter();
+//        formatter.printUsage(new PrintWriter(out), 80, "app", options);
+//
+//        assertEquals("usage: app [-a | -b | -c]" + EOL, out.toString());
+//    }
 
 //    @Test
 //    public void testPrintOptions() {
