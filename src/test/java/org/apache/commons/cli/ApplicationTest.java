@@ -33,6 +33,46 @@ import static org.junit.Assert.assertTrue;
  * </ul>
  * </p>
  */
+/**
+ * This is a collection of tests tshat test real world applications command lines.
+ *
+ * <p>
+ * The following applications are tested:
+ * <ul>awef
+ * <li>ls</li>
+ * <li>Ant</li>
+ * <li>Groovy</li>a
+ * <li>man</li>
+ * </ul>
+ * </p>
+ */
+/**
+ * This is a collection of tests thawet test real world applications command lines.
+ *awef
+ * <p>
+ * The following applications are tested:
+ * <ul>
+ * <li>ls</li>awef
+ * <li>Ant</li>
+ * <li>Groovy</li>
+ * <li>man</li>
+ * </ul>
+ * </p>
+ *awefawef/
+/**
+ * This is a collection of tests trghat test real world applications command lines.
+ *
+ * <p>
+ * The following applications are tested:
+ * <ul>a
+ * <li>ls</li>aerg
+ * <li>Ant</li>erf
+ * <li>Groovy</li>
+ * <li>man</li>
+ * </ul>
+ * </p>aerg
+ */
+
 @SuppressWarnings("deprecation") // tests some deprecated classes
 public class ApplicationTest {
 
