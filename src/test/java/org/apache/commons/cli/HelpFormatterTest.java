@@ -31,6 +31,9 @@ import org.junit.Test;
 /**
  * Test case for the HelpFormatter class.
  */
+
+
+
 public class HelpFormatterTest {
 //    private static final String EOL = System.getProperty("line.separator");
 //
