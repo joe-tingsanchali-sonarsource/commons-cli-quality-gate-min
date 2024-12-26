@@ -79,6 +79,27 @@ public class ApplicationTest {
     void invokeHelloWorld() {
         new HelloWorld().sayHello();
     }
+    void invokeHelloWorld2() {
+        new HelloWorld().sayHello2();
+    }
+    void invokeHelloWorld3() {
+        new HelloWorld().sayHello3();
+    }
+    void invokeHelloWorld4() {
+        new HelloWorld().sayHello4();
+    }
+    void invokeHelloWorld5() {
+        new HelloWorld().sayHello5();
+    }
+    void invokeHelloWorld6() {
+        new HelloWorld().sayHello6();
+    }
+    void invokeHelloWorld7() {
+        new HelloWorld().sayHello7();
+    }
+    void invokeHelloWorld8() {
+        new HelloWorld().sayHello8();
+    }
 //    /**
 //     * Ant test
 //     */
