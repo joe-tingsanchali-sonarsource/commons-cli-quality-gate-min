@@ -383,48 +383,48 @@ public class HelpFormatterTest {
 //        assertEquals("usage: app [-a | -b | -c]" + EOL, out.toString());
 //    }
 
-//    @Test
-//    public void testPrintOptions() {
-//        final StringBuffer sb = new StringBuffer();
-//        final HelpFormatter hf = new HelpFormatter();
-//        final int leftPad = 1;
-//        final int descPad = 3;
-//        final String lpad = hf.createPadding(leftPad);
-//        final String dpad = hf.createPadding(descPad);
-//        Options options;
-//        String expected;
-//
-//        options = new Options().addOption("a", false, "aaaa aaaa aaaa aaaa aaaa");
-//        expected = lpad + "-a" + dpad + "aaaa aaaa aaaa aaaa aaaa";
-//        hf.renderOptions(sb, 60, options, leftPad, descPad);
-//        assertEquals("simple non-wrapped option", expected, sb.toString());
-//
-//        int nextLineTabStop = leftPad + descPad + "-a".length();
-//        expected = lpad + "-a" + dpad + "aaaa aaaa aaaa" + EOL + hf.createPadding(nextLineTabStop) + "aaaa aaaa";
-//        sb.setLength(0);
-//        hf.renderOptions(sb, nextLineTabStop + 17, options, leftPad, descPad);
-//        assertEquals("simple wrapped option", expected, sb.toString());
-//
-//        options = new Options().addOption("a", "aaa", false, "dddd dddd dddd dddd");
-//        expected = lpad + "-a,--aaa" + dpad + "dddd dddd dddd dddd";
-//        sb.setLength(0);
-//        hf.renderOptions(sb, 60, options, leftPad, descPad);
-//        assertEquals("long non-wrapped option", expected, sb.toString());
-//
-//        nextLineTabStop = leftPad + descPad + "-a,--aaa".length();
-//        expected = lpad + "-a,--aaa" + dpad + "dddd dddd" + EOL + hf.createPadding(nextLineTabStop) + "dddd dddd";
-//        sb.setLength(0);
-//        hf.renderOptions(sb, 25, options, leftPad, descPad);
-//        assertEquals("long wrapped option", expected, sb.toString());
-//
-//        options = new Options().addOption("a", "aaa", false, "dddd dddd dddd dddd").addOption("b", false, "feeee eeee eeee eeee");
-//        expected = lpad + "-a,--aaa" + dpad + "dddd dddd" + EOL + hf.createPadding(nextLineTabStop) + "dddd dddd" + EOL + lpad + "-b      " + dpad
-//            + "feeee eeee" + EOL + hf.createPadding(nextLineTabStop) + "eeee eeee";
-//        sb.setLength(0);
-//        hf.renderOptions(sb, 25, options, leftPad, descPad);
-//        assertEquals("multiple wrapped options", expected, sb.toString());
-//    }
-//
+    @Test
+    public void testPrintOptions() {
+        final StringBuffer sb = new StringBuffer();
+        final HelpFormatter hf = new HelpFormatter();
+        final int leftPad = 1;
+        final int descPad = 3;
+        final String lpad = hf.createPadding(leftPad);
+        final String dpad = hf.createPadding(descPad);
+        Options options;
+        String expected;
+
+        options = new Options().addOption("a", false, "aaaa aaaa aaaa aaaa aaaa");
+        expected = lpad + "-a" + dpad + "aaaa aaaa aaaa aaaa aaaa";
+        hf.renderOptions(sb, 60, options, leftPad, descPad);
+        assertEquals("simple non-wrapped option", expected, sb.toString());
+
+        int nextLineTabStop = leftPad + descPad + "-a".length();
+        expected = lpad + "-a" + dpad + "aaaa aaaa aaaa" + EOL + hf.createPadding(nextLineTabStop) + "aaaa aaaa";
+        sb.setLength(0);
+        hf.renderOptions(sb, nextLineTabStop + 17, options, leftPad, descPad);
+        assertEquals("simple wrapped option", expected, sb.toString());
+
+        options = new Options().addOption("a", "aaa", false, "dddd dddd dddd dddd");
+        expected = lpad + "-a,--aaa" + dpad + "dddd dddd dddd dddd";
+        sb.setLength(0);
+        hf.renderOptions(sb, 60, options, leftPad, descPad);
+        assertEquals("long non-wrapped option", expected, sb.toString());
+
+        nextLineTabStop = leftPad + descPad + "-a,--aaa".length();
+        expected = lpad + "-a,--aaa" + dpad + "dddd dddd" + EOL + hf.createPadding(nextLineTabStop) + "dddd dddd";
+        sb.setLength(0);
+        hf.renderOptions(sb, 25, options, leftPad, descPad);
+        assertEquals("long wrapped option", expected, sb.toString());
+
+        options = new Options().addOption("a", "aaa", false, "dddd dddd dddd dddd").addOption("b", false, "feeee eeee eeee eeee");
+        expected = lpad + "-a,--aaa" + dpad + "dddd dddd" + EOL + hf.createPadding(nextLineTabStop) + "dddd dddd" + EOL + lpad + "-b      " + dpad
+            + "feeee eeee" + EOL + hf.createPadding(nextLineTabStop) + "eeee eeee";
+        sb.setLength(0);
+        hf.renderOptions(sb, 25, options, leftPad, descPad);
+        assertEquals("multiple wrapped options", expected, sb.toString());
+    }
+
 //    @Test
 //    public void testPrintOptionWithEmptyArgNameUsage() {
 //        final Option option = new Option("f", true, null);
