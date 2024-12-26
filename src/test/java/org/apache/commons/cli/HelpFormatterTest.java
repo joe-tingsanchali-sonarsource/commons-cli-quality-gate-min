@@ -365,7 +365,7 @@ public class HelpFormatterTest {
 //        }
 //    }
 
-    @Test
+//    @Test
 //    public void testPrintOptionGroupUsage() {
 //        final OptionGroup group = new OptionGroup();
 //        group.addOption(Option.builder("a").build());
