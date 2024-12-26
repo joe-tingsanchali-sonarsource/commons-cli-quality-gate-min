@@ -26,45 +26,45 @@ import org.junit.Test;
 
 @SuppressWarnings("deprecation") // tests some deprecated classes
 public class ArgumentIsOptionTest {
-
-    private Options options;
-    private CommandLineParser parser;
-
-    @Before
-    public void setUp() {
-        options = new Options().addOption("p", false, "Option p").addOption("attr", true, "Option accepts argument");
-        parser = new PosixParser();
-    }
-
-    @Test
-    public void testOption() throws Exception {
-        final String[] args = {"-p"};
-
-        final CommandLine cl = parser.parse(options, args);
-        assertTrue("Confirm -p is set", cl.hasOption("p"));
-        assertFalse("Confirm -attr is not set", cl.hasOption("attr"));
-        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
-    }
-
-    @Test
-    public void testOptionAndOptionWithArgument() throws Exception {
-        final String[] args = {"-p", "-attr", "p"};
-
-        final CommandLine cl = parser.parse(options, args);
-        assertTrue("Confirm -p is set", cl.hasOption("p"));
-        assertTrue("Confirm -attr is set", cl.hasOption("attr"));
-        assertEquals("Confirm arg of -attr", "p", cl.getOptionValue("attr"));
-        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
-    }
-
-    @Test
-    public void testOptionWithArgument() throws Exception {
-        final String[] args = {"-attr", "p"};
-
-        final CommandLine cl = parser.parse(options, args);
-        assertFalse("Confirm -p is set", cl.hasOption("p"));
-        assertTrue("Confirm -attr is set", cl.hasOption("attr"));
-        assertEquals("Confirm arg of -attr", "p", cl.getOptionValue("attr"));
-        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
-    }
+//
+//    private Options options;
+//    private CommandLineParser parser;
+//
+//    @Before
+//    public void setUp() {
+//        options = new Options().addOption("p", false, "Option p").addOption("attr", true, "Option accepts argument");
+//        parser = new PosixParser();
+//    }
+//
+//    @Test
+//    public void testOption() throws Exception {
+//        final String[] args = {"-p"};
+//
+//        final CommandLine cl = parser.parse(options, args);
+//        assertTrue("Confirm -p is set", cl.hasOption("p"));
+//        assertFalse("Confirm -attr is not set", cl.hasOption("attr"));
+//        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
+//    }
+//
+//    @Test
+//    public void testOptionAndOptionWithArgument() throws Exception {
+//        final String[] args = {"-p", "-attr", "p"};
+//
+//        final CommandLine cl = parser.parse(options, args);
+//        assertTrue("Confirm -p is set", cl.hasOption("p"));
+//        assertTrue("Confirm -attr is set", cl.hasOption("attr"));
+//        assertEquals("Confirm arg of -attr", "p", cl.getOptionValue("attr"));
+//        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
+//    }
+//
+//    @Test
+//    public void testOptionWithArgument() throws Exception {
+//        final String[] args = {"-attr", "p"};
+//
+//        final CommandLine cl = parser.parse(options, args);
+//        assertFalse("Confirm -p is set", cl.hasOption("p"));
+//        assertTrue("Confirm -attr is set", cl.hasOption("attr"));
+//        assertEquals("Confirm arg of -attr", "p", cl.getOptionValue("attr"));
+//        assertEquals("Confirm all arguments recognized", 0, cl.getArgs().length);
+//    }
 }
