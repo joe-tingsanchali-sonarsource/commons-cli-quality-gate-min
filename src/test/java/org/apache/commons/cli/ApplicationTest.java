@@ -20,11 +20,6 @@ package org.apache.commons.cli;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
-import org.junit.Test;
-
 /**
  * This is a collection of tests that test real world applications command lines.
  *
@@ -40,6 +35,10 @@ import org.junit.Test;
  */
 @SuppressWarnings("deprecation") // tests some deprecated classes
 public class ApplicationTest {
+
+    void invokeHelloWorld() {
+        new HelloWorld().sayHello();
+    }
 //    /**
 //     * Ant test
 //     */
