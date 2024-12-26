@@ -25,4 +25,7 @@ public class HelloWorld {
     void sayHello8() {
         System.out.println("Hello World!");
     }
+    void sayHello9() {
+        System.out.println("Hello World!");
+    }
 }

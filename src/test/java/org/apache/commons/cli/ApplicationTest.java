@@ -99,6 +99,7 @@ public class ApplicationTest {
     }
     void invokeHelloWorld8() {
         new HelloWorld().sayHello8();
+        new HelloWorld().sayHello9();
     }
 //    /**
 //     * Ant test
