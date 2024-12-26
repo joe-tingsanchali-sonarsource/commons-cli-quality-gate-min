@@ -347,23 +347,23 @@ public class HelpFormatterTest {
         assertEquals("header newline", expected, out.toString());
     }
 
-//    @Test
-//    public void testPrintHelpWithEmptySyntax() {
-//        final HelpFormatter formatter = new HelpFormatter();
-//        try {
-//            formatter.printHelp(null, new Options());
-//            fail("null command line syntax should be rejected");
-//        } catch (final IllegalArgumentException e) {
-//            // expected
-//        }
-//
-//        try {
-//            formatter.printHelp("", new Options());
-//            fail("empty command line syntax should be rejected");
-//        } catch (final IllegalArgumentException e) {
-//            // expected
-//        }
-//    }
+    @Test
+    public void testPrintHelpWithEmptySyntax() {
+        final HelpFormatter formatter = new HelpFormatter();
+        try {
+            formatter.printHelp(null, new Options());
+            fail("null command line syntax should be rejected");
+        } catch (final IllegalArgumentException e) {
+            // expected
+        }
+
+        try {
+            formatter.printHelp("", new Options());
+            fail("empty command line syntax should be rejected");
+        } catch (final IllegalArgumentException e) {
+            // expected
+        }
+    }
 
 //    @Test
 //    public void testPrintOptionGroupUsage() {

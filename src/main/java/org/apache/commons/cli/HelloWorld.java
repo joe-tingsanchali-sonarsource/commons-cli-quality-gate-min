@@ -28,4 +28,10 @@ public class HelloWorld {
     void sayHello9() {
         System.out.println("Hello World!");
     }
+    void sayHello10() {
+        System.out.println("Hello World!");
+    }
+    void sayHello11() {
+        System.out.println("Hello World!");
+    }
 }
